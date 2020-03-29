@@ -1,0 +1,27 @@
+{
+  "name": "com.valax321.blendablestandardshader",
+  "displayName": "Blendable Standard Shader",
+  "version": "1.0.0",
+  "description": "A surface shader implementing blendable Standard materials.",
+  "unity": "2018.1",
+  "keywords": [
+    "shader",
+    "surface",
+    "polybrush",
+    "material",
+    "vertex",
+    "effects",
+    "pbr"
+  ],
+  "author": {
+    "name": "Valax321",
+    "url": "https://valax321.github.io"
+  },
+  "homepage": "https://www.github.com/Valax321/BlendableStandardShader",
+  "license": "MIT",
+  "type": "tool",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/Valax321/BlendableStandardShader.git"
+  }
+}

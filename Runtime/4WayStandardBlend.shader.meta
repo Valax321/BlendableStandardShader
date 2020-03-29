@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 56ee3befa3e0b4ecca2c76b2fee2ceda
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: '{"shaderPath":"Trash/4-Way Standard Blend","attributes":[{"channel":4,"index":0,"range":{"x":0.0,"y":1.0},"propertyTarget":"_MainTex","mask":0},{"channel":4,"index":1,"range":{"x":0.0,"y":1.0},"propertyTarget":"_MainTex2","mask":0},{"channel":4,"index":2,"range":{"x":0.0,"y":1.0},"propertyTarget":"_MainTex3","mask":0},{"channel":4,"index":3,"range":{"x":0.0,"y":1.0},"propertyTarget":"_MainTex4","mask":0}]}'
+  assetBundleName: 
+  assetBundleVariant: 
