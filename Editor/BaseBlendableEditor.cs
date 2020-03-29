@@ -79,6 +79,7 @@ namespace Valax321.BlendableStandard.Editor
             public static GUIContent MetallicF = new GUIContent("Metallic");
             public static GUIContent SpecularF = new GUIContent("Specular Color");
             public static GUIContent SmoothnessF = new GUIContent("Smoothness");
+            public static GUIContent Height = new GUIContent("Height Map (R)");
             
             public static GUIContent AdvancedProperties = new GUIContent("Advanced Properties");
         }
@@ -229,21 +230,21 @@ namespace Valax321.BlendableStandard.Editor
             
             // Layer 1
             DrawLayer(Styles.Layer1Header, editor, m_mainTex, m_bumpMap, 
-                m_smoothness, m_ao, m_metallicF, m_smoothnessF, "layer1");
+                m_smoothness, m_ao, m_metallicF, m_smoothnessF, m_height, "layer1");
             // Layer 2
             DrawLayer(Styles.Layer2Header, editor, m_mainTex2, m_bumpMap2, 
-                m_smoothness2, m_ao2, m_metallicF2, m_smoothnessF2, "layer2");
+                m_smoothness2, m_ao2, m_metallicF2, m_smoothnessF2, m_height2, "layer2");
             // Layer 3
             if (layerCount >= 3)
             {
                 DrawLayer(Styles.Layer3Header, editor, m_mainTex3, m_bumpMap3, 
-                    m_smoothness3, m_ao3, m_metallicF3, m_smoothnessF3, "layer3");
+                    m_smoothness3, m_ao3, m_metallicF3, m_smoothnessF3, m_height3, "layer3");
             }
             // Layer 4
             if (layerCount >= 4)
             {
                 DrawLayer(Styles.Layer4Header, editor, m_mainTex4, m_bumpMap, 
-                    m_smoothness4, m_ao4, m_metallicF4, m_smoothnessF4, "layer4");
+                    m_smoothness4, m_ao4, m_metallicF4, m_smoothnessF4, m_height4, "layer4");
             }
             
             EditorGUILayout.Separator();
@@ -256,7 +257,7 @@ namespace Valax321.BlendableStandard.Editor
         }
 
         private void DrawLayer(GUIContent header, MaterialEditor editor, MaterialProperty mainTex, MaterialProperty bump,
-            MaterialProperty smoothness, MaterialProperty ao, MaterialProperty metallicF, MaterialProperty smoothnessF, string prefsName)
+            MaterialProperty smoothness, MaterialProperty ao, MaterialProperty metallicF, MaterialProperty smoothnessF, MaterialProperty height, string prefsName)
         {
             bool state = EditorPrefs.GetBool(k_editorPrefsPrefix + prefsName, true);
             state = EditorGUILayout.BeginFoldoutHeaderGroup(state, header);
@@ -285,8 +286,9 @@ namespace Valax321.BlendableStandard.Editor
                     EditorGUI.indentLevel--;
                 }
 
+                editor.TexturePropertySingleLine(Styles.Height, height);
                 editor.TexturePropertySingleLine(Styles.AmbientOcclusionTex, ao);
-
+                
                 editor.TextureScaleOffsetProperty(m_mainTex);
             }
             EditorPrefs.SetBool(k_editorPrefsPrefix + prefsName, state);
