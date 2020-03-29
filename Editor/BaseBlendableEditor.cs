@@ -243,7 +243,7 @@ namespace Valax321.BlendableStandard.Editor
             // Layer 4
             if (layerCount >= 4)
             {
-                DrawLayer(Styles.Layer4Header, editor, m_mainTex4, m_bumpMap, 
+                DrawLayer(Styles.Layer4Header, editor, m_mainTex4, m_bumpMap4, 
                     m_smoothness4, m_ao4, m_metallicF4, m_smoothnessF4, m_height4, "layer4");
             }
             
