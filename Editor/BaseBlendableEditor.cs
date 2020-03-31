@@ -52,36 +52,36 @@ namespace Valax321.BlendableStandard.Editor
         private const string k_4Layers = "FOUR_LAYERS";
         
         #endregion
-        
-        public enum MaterialType
+
+        protected enum MaterialType
         {
             Metallic,
             Specular
         }
 
-        protected class Styles
+        private class Styles
         {
-            public static GUIContent LayerHeading = new GUIContent("Layer Setup");
-            public static GUIContent Layer1Header = new GUIContent("Layer 1");
-            public static GUIContent Layer2Header = new GUIContent("Layer 2");
-            public static GUIContent Layer3Header = new GUIContent("Layer 3");
-            public static GUIContent Layer4Header = new GUIContent("Layer 4");
+            public static readonly GUIContent LayerHeading = new GUIContent("Layer Setup");
+            public static readonly GUIContent Layer1Header = new GUIContent("Layer 1");
+            public static readonly GUIContent Layer2Header = new GUIContent("Layer 2");
+            public static readonly GUIContent Layer3Header = new GUIContent("Layer 3");
+            public static readonly GUIContent Layer4Header = new GUIContent("Layer 4");
             
-            public static GUIContent MainPropsHeading = new GUIContent("Layer Properties");
-            public static GUIContent LayerCount = new GUIContent("Layers", "Compiles shader variants for the given number of layers. Set this to the lowest number you use for improved performance");
-            public static GUIContent LayerBlend = new GUIContent("Blend Factor", "Sharpness of blending between the layers.");
+            public static readonly GUIContent MainPropsHeading = new GUIContent("Layer Properties");
+            public static readonly GUIContent LayerCount = new GUIContent("Layers", "Compiles shader variants for the given number of layers. Set this to the lowest number you use for improved performance");
+            public static readonly GUIContent LayerBlend = new GUIContent("Blend Factor", "Sharpness of blending between the layers.");
             
-            public static GUIContent MainTex = new GUIContent("Base Color (RGB)");
-            public static GUIContent BumpMap = new GUIContent("Normal Map");
-            public static GUIContent MetallicSmoothnessTex = new GUIContent("Metallic Smoothness", "Metallic (R), Smoothness (A)");
-            public static GUIContent SpecularSmoothnessTex = new GUIContent("Specular Smoothness", "Specular (RGB), Smoothness (A)");
-            public static GUIContent AmbientOcclusionTex = new GUIContent("Ambient Occlusion", "Ambient Occlusion (R)");
-            public static GUIContent MetallicF = new GUIContent("Metallic");
-            public static GUIContent SpecularF = new GUIContent("Specular Color");
-            public static GUIContent SmoothnessF = new GUIContent("Smoothness");
-            public static GUIContent Height = new GUIContent("Height Map (R)");
+            public static readonly GUIContent MainTex = new GUIContent("Base Color (RGB)");
+            public static readonly GUIContent BumpMap = new GUIContent("Normal Map");
+            public static readonly GUIContent MetallicSmoothnessTex = new GUIContent("Metallic Smoothness", "Metallic (R), Smoothness (A)");
+            public static readonly GUIContent SpecularSmoothnessTex = new GUIContent("Specular Smoothness", "Specular (RGB), Smoothness (A)");
+            public static readonly GUIContent AmbientOcclusionTex = new GUIContent("Ambient Occlusion", "Ambient Occlusion (R)");
+            public static readonly GUIContent MetallicF = new GUIContent("Metallic");
+            public static readonly GUIContent SpecularF = new GUIContent("Specular Color");
+            public static readonly GUIContent SmoothnessF = new GUIContent("Smoothness");
+            public static readonly GUIContent Height = new GUIContent("Height Map (R)");
             
-            public static GUIContent AdvancedProperties = new GUIContent("Advanced Properties");
+            public static readonly GUIContent AdvancedProperties = new GUIContent("Advanced Properties");
         }
 
         #region Material Properties
@@ -289,7 +289,7 @@ namespace Valax321.BlendableStandard.Editor
                 editor.TexturePropertySingleLine(Styles.Height, height);
                 editor.TexturePropertySingleLine(Styles.AmbientOcclusionTex, ao);
                 
-                editor.TextureScaleOffsetProperty(m_mainTex);
+                editor.TextureScaleOffsetProperty(mainTex);
             }
             EditorPrefs.SetBool(k_editorPrefsPrefix + prefsName, state);
             EditorGUILayout.EndFoldoutHeaderGroup();
